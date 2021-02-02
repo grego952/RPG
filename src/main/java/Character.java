@@ -47,11 +47,20 @@ public abstract class Character {
     State attack(Character enemy) {
         int strikeResult = calculateDamage() - enemy.getDefense();
         HP -= strikeResult;
-        if (HP <=0) {
+        if (isCharacterAlive(enemy)) {
+            System.out.println(getName() + " hit " + enemy.name + " dealing " + strikeResult + "  damage");
+            return State.ALIVE;
+        } else {
             System.out.println(getName() + " killed " + enemy.name);
             return State.DEAD;
+        }
+    }
+
+    boolean isCharacterAlive(Character enemy) {
+        if (enemy.getHP() < 1) {
+            attack(enemy);
+            return true;
         } else
-            System.out.println(getName() + " hit " + enemy.name + " dealing " + strikeResult + "  damage" );
-        return State.ALIVE;
+            return false;
     }
 }

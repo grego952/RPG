@@ -2,11 +2,13 @@ Rogue.java
  Rogue
 State.java
  State
+CharacterFactory.java
+ CharacterFactory
 Warrior.java
  Warrior
-Character.java
- Character
-Wizard.java
- Wizard
 Boss.java
  Boss
+Wizard.java
+ Wizard
+Character.java
+ Character

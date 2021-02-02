@@ -1,18 +1,41 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CharacterTestSuite {
+
+
+    @Test
+    void testCharacterFactory() {
+
+        //Given
+        CharacterFactory factory = new CharacterFactory();
+
+        //When
+       Character wizard = factory.makeCharacter(CharacterFactory.WIZARD);
+
+        //When
+        assertEquals ("Kuśka", wizard.getName());
+    }
 
     @Test
     void testAttack() {
+
         //Given
-        Wizard wizard = new Wizard("Kuśka", 1.90, "blue", 100, State.ALIVE, 100, 10, 150);
-        Boss boss = new Boss ("Polip", 2.01, "dark", 200, State.ALIVE, 200, 200, 500);
+        CharacterFactory factory = new CharacterFactory();
+        Character wizard = factory.makeCharacter(CharacterFactory.WIZARD);
+        Character warrior = factory.makeCharacter(CharacterFactory.WARRIOR);
+        Character rogue = factory.makeCharacter(CharacterFactory.ROGUE);
+        Character boss = factory.makeCharacter(CharacterFactory.BOSS);
 
         //When
         wizard.attack(boss);
-        boss.attack(wizard);
+        warrior.attack(rogue);
+        rogue.attack(wizard);
+        boss.attack(warrior);
 
         //Then
         //do nothing
     }
+
 }
