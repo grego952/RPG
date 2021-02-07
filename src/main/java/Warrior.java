@@ -15,16 +15,11 @@ public class Warrior extends Character {
 
     @Override
     int calculateDamage() {
-        return attackPower + swordAttackBonus + Aggression;
+        return attackPower + swordAttackBonus + Aggression + DiceRoller.rollTheDice(2, 6);
     }
 
     @Override
     int getDefense() {
-        return defense - Aggression;
-    }
-
-    @Override
-    String showCharacterSheet() {
-        return null;
+        return defense - Aggression + DiceRoller.rollTheDice(1,6);
     }
 }

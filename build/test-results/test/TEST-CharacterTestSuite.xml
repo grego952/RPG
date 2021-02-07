@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CharacterTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-02-02T08:49:55" hostname="DESKTOP-20SP2NA" time="0.054">
+<testsuite name="CharacterTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-07T10:38:34" hostname="DESKTOP-20SP2NA" time="0.043">
   <properties/>
-  <testcase name="testAttack()" classname="CharacterTestSuite" time="0.048"/>
-  <testcase name="testCharacterFactory()" classname="CharacterTestSuite" time="0.005"/>
-  <system-out><![CDATA[KuĹ›ka killed Jabajbaj
-Don Chichot killed Kirk Javorsky
-Kirk Javorsky killed KuĹ›ka
-Jabajbaj killed Don Chichot
+  <testcase name="testAttack()" classname="CharacterTestSuite" time="0.043"/>
+  <system-out><![CDATA[KuĹ›ka hit Jabajbaj dealing 6 damage
+current 244
+Don Chichot hit Kirk Javorsky dealing 26 damage
+current 124
+Kirk Javorsky hit KuĹ›ka dealing 20 damage
+current 130
+Jabajbaj hit Don Chichot dealing 117 damage
+current 33
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

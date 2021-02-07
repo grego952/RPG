@@ -1,9 +1,20 @@
-Rogue.java
- Rogue
+DiceRoller.java
+ DiceRoller
+CharacterName.java
+ CharacterName
 State.java
  State
+Battle.java
+ Battle
+Rogue.java
+ Rogue
+Main.java
+ Main
+Party.java
+ Party
 CharacterFactory.java
  CharacterFactory
+ CharacterFactory$1
 Warrior.java
  Warrior
 Boss.java

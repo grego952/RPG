@@ -37,30 +37,48 @@ public abstract class Character {
     abstract int calculateDamage();
     abstract int getDefense();
 
-    String showCharacterSheet() {
+    public String showCharacterSheet() {
         return "Name " + name +
                 " Height " + height +
-                " Eyes color " + eyes +
-                " HP " + HP;
+                " Eyes color " + eyes;
     };
+
+    @Override
+    public String toString() {
+        return "Character "
+                 + name;
+    }
 
     State attack(Character enemy) {
         int strikeResult = calculateDamage() - enemy.getDefense();
-        HP -= strikeResult;
-        if (isCharacterAlive(enemy)) {
-            System.out.println(getName() + " hit " + enemy.name + " dealing " + strikeResult + "  damage");
+        if (strikeResult <= 0) {
+            strikeResult = 0;
             return State.ALIVE;
+        }
+            enemy.HP -= strikeResult;
+
+        if (enemy.getHP() > 0) {
+            System.out.println(getName() + " hit " + enemy.name + " dealing " + strikeResult + " damage");
         } else {
             System.out.println(getName() + " killed " + enemy.name);
             return State.DEAD;
         }
+        return State.ALIVE;
     }
 
-    boolean isCharacterAlive(Character enemy) {
-        if (enemy.getHP() < 1) {
-            attack(enemy);
+    boolean isCharacterAlive() {
+        if (HP > 0) {
             return true;
         } else
             return false;
+    }
+
+    void bossAttack(Party party) {
+
+        for (Character character : party.getAll()) {
+            if (party.isPartyAlive()) {
+                attack(character);
+            }
+        }
     }
 }

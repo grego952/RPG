@@ -12,7 +12,7 @@ public class CharacterTestSuite {
         CharacterFactory factory = new CharacterFactory();
 
         //When
-       Character wizard = factory.makeCharacter(CharacterFactory.WIZARD);
+       Character wizard = factory.makeCharacter(CharacterName.WIZARD);
 
         //When
         assertEquals ("Kuśka", wizard.getName());
@@ -23,10 +23,10 @@ public class CharacterTestSuite {
 
         //Given
         CharacterFactory factory = new CharacterFactory();
-        Character wizard = factory.makeCharacter(CharacterFactory.WIZARD);
-        Character warrior = factory.makeCharacter(CharacterFactory.WARRIOR);
-        Character rogue = factory.makeCharacter(CharacterFactory.ROGUE);
-        Character boss = factory.makeCharacter(CharacterFactory.BOSS);
+        Character wizard = factory.makeCharacter(CharacterName.WIZARD);
+        Character warrior = factory.makeCharacter(CharacterName.WARRIOR);
+        Character rogue = factory.makeCharacter(CharacterName.ROGUE);
+        Character boss = factory.makeCharacter(CharacterName.BOSS);
 
         //When
         wizard.attack(boss);
@@ -37,5 +37,24 @@ public class CharacterTestSuite {
         //Then
         //do nothing
     }
+    @Test
+    void testTeamMemberListSize() {
+        //Given
+        Party party = new Party();
+        CharacterFactory factory = new CharacterFactory();
+        Character wizard = factory.makeCharacter(CharacterName.WIZARD);
+        Character warrior = factory.makeCharacter(CharacterName.WARRIOR);
+        Character rogue = factory.makeCharacter(CharacterName.ROGUE);
 
+        //When
+        party.addToParty(wizard);
+        party.addToParty(warrior);
+        party.addToParty(rogue);
+
+        int teamMembersListSize = party.getAll().size();
+
+        //Then
+        assertEquals(3, teamMembersListSize);
+        assertEquals("Kirk Javorsky", party.teamMembers.get(2).getName());
+    }
 }

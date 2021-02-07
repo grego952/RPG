@@ -15,16 +15,11 @@ public class Rogue extends Character {
 
     @Override
     int calculateDamage() {
-        return attackPower * backStabModifier;
+        return attackPower + backStabModifier + DiceRoller.rollTheDice(2, 6);
     }
 
     @Override
     int getDefense() {
-        return defense + dodge;
-    }
-
-    @Override
-    String showCharacterSheet() {
-        return null;
+        return defense + dodge + DiceRoller.rollTheDice(1, 6);
     }
 }

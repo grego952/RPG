@@ -1,20 +1,15 @@
 public final class CharacterFactory {
 
-    public static final String WIZARD = "WIZARD";
-    public static final String WARRIOR = "WARRIOR";
-    public static final String ROGUE = "ROGUE";
-    public static final String BOSS = "BOSS";
-
-    public final Character makeCharacter (final String characterClass) {
+    public final Character makeCharacter (CharacterName characterClass) {
         switch (characterClass) {
             case WIZARD:
-                return new Wizard("Kuśka", 1.90, "blue", 100, State.ALIVE, 100, 10, 150);
+                return new Wizard("Kuśka", 1.90, "blue", 150, State.ALIVE, 150, 10, 150);
             case WARRIOR:
-                return new Warrior("Don Chichot", 1.60, "green", 100, State.ALIVE, 100, 15, 100, 20);
+                return new Warrior("Don Chichot", 1.60, "green", 150, State.ALIVE, 150, 15, 150, 20);
             case ROGUE:
-                return new Rogue("Kirk Javorsky", 1.65, "grey", 100, State.ALIVE, 100, 15, 100, 10);
+                return new Rogue("Kirk Javorsky", 1.65, "grey", 150, State.ALIVE, 150, 15, 150, 10);
             case BOSS:
-                return new Boss ("Jabajbaj", 2.3, "dark", 200, State.ALIVE, 200, 50, 200);
+                return new Boss ("Jabajbaj", 2.3, "dark", 1000, State.ALIVE, 500, 50, 15);
             default:
                 return null;
         }

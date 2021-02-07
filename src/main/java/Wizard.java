@@ -13,12 +13,12 @@ public class Wizard extends Character{
 
     @Override
     int calculateDamage() {
-        return magicAttack + wandDamageBonus;
+        return magicAttack + wandDamageBonus + DiceRoller.rollTheDice(2, 6);
     }
 
     @Override
     int getDefense() {
-        return barrierStrength;
+        return barrierStrength + DiceRoller.rollTheDice(1, 6);
     }
 
 }
