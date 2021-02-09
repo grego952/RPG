@@ -8,18 +8,18 @@ Battle.java
  Battle
 Rogue.java
  Rogue
-Main.java
- Main
+Character.java
+ Character
 Party.java
  Party
-CharacterFactory.java
- CharacterFactory
- CharacterFactory$1
+Wizard.java
+ Wizard
 Warrior.java
  Warrior
 Boss.java
  Boss
-Wizard.java
- Wizard
-Character.java
- Character
+Main.java
+ Main
+CharacterFactory.java
+ CharacterFactory
+ CharacterFactory$1

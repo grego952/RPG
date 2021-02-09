@@ -24,8 +24,9 @@ public class Party {
     State teamAttack(Character enemy) {
 
         for (Character character : teamMembers) {
-            if (character.getHP() > 0) {
+            if (enemy.getHP() > 0) {
                 character.attack(enemy);
+                return State.ALIVE;
             } else {
                 System.out.println(character + " is dead");
                 return State.DEAD;
@@ -38,11 +39,9 @@ public class Party {
         for (Character partyMember : getAll()) {
             if (partyMember.isCharacterAlive()) {
                 return true;
-            } else {
-                System.out.println("There is no one left...");
-                return false;
             }
         }
-        return true;
+        System.out.println("There is no one left...");
+        return false;
     }
 }
