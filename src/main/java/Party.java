@@ -21,18 +21,13 @@ public class Party {
         System.out.println(character.showCharacterSheet());
     }
 
-    State teamAttack(Character enemy) {
+    void teamAttack(Character enemy) {
 
         for (Character character : teamMembers) {
-            if (enemy.getHP() > 0) {
+            if (character.isCharacterAlive() && enemy.isCharacterAlive()) {
                 character.attack(enemy);
-                return State.ALIVE;
-            } else {
-                System.out.println(character + " is dead");
-                return State.DEAD;
             }
         }
-        return State.ALIVE;
     }
 
     boolean isPartyAlive() {

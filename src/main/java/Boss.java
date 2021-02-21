@@ -19,16 +19,15 @@ public class Boss extends Character {
         Random rand = new Random();
 
         if (rand.nextInt(10) > 3) {
-            System.out.println("Boss used attack");
+            System.out.println(name + " used attack");
             return attack + DiceRoller.rollTheDice(2, 6);
         } else
-            System.out.println("Boss used specialAttack");
-            return specialAttack + DiceRoller.rollTheDice(2, 6);
+            System.out.println(name + " used specialAttack");
+        return specialAttack + DiceRoller.rollTheDice(2, 6);
     }
 
     @Override
     int getDefense() {
         return defense + DiceRoller.rollTheDice(1, 6);
     }
-
 }

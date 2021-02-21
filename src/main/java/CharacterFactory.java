@@ -9,7 +9,7 @@ public final class CharacterFactory {
             case ROGUE:
                 return new Rogue("Kirk Javorsky", 1.65, "grey", 150, State.ALIVE, 150, 15, 150, 10);
             case BOSS:
-                return new Boss ("Jabajbaj", 2.3, "dark", 200, State.ALIVE, 100, 150, 15);
+                return new Boss ("Jabajbaj", 2.3, "dark", 450, State.ALIVE, 150, 200, 140);
             default:
                 return null;
         }

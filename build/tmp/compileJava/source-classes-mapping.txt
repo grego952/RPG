@@ -4,12 +4,12 @@ CharacterName.java
  CharacterName
 State.java
  State
+Character.java
+ Character
 Battle.java
  Battle
 Rogue.java
  Rogue
-Character.java
- Character
 Party.java
  Party
 Wizard.java
